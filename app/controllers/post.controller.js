@@ -30,12 +30,6 @@ exports.likePost = (req, res) => {
   try {
     var post = Post.findOne({ where: { id: req.body.id } });
 
-    Apis.update({
-      state: 0
-     }, {
-      where: { project_id: projectId }
-    })
-
     Post.update(
       { likes: 3 },
       { where: { id: req.body.id } }

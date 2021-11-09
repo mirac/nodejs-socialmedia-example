@@ -31,7 +31,7 @@ exports.likePost = (req, res) => {
     var post = Post.findOne({ where: { id: req.body.id } });
 
     Post.update(
-      { likes: 3 },
+      { likes: likes + 1 },
       { where: { id: req.body.id } }
     )
       .then(result =>
